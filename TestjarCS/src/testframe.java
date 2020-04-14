@@ -61,7 +61,7 @@ public class testframe extends JFrame implements MouseListener
 	}
 	public void mouseReleased(MouseEvent event)
 	{
-		int num = (int) Math.floor(Math.random() * (10) + 1);
+		int num = (int) Math.floor(Math.random() * (11) + 1);
 		System.out.println(num);
 		//a
 		if (event.getX() < 360 && event.getY() < 585 && event.getX() > 100  && event.getY() > 225) // shows card window
