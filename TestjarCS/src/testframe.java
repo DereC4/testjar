@@ -15,7 +15,7 @@ public class testframe extends JFrame implements MouseListener
 	JLabel a, b, c, d;
 	public testframe() throws IOException
 	{
-		super("Seven Wonders");
+		super("Test Jar Derek");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setResizable(false);
 		setLayout(null);
@@ -61,28 +61,47 @@ public class testframe extends JFrame implements MouseListener
 	}
 	public void mouseReleased(MouseEvent event)
 	{
-		int num = (int) Math.floor(Math.random() * (12) + 1);
+		int num = (int) Math.floor(Math.random() * (16) + 1);
 		System.out.println(num);
 		//a
 		if (event.getX() < 360 && event.getY() < 585 && event.getX() > 100  && event.getY() > 225) // shows card window
 		{
-			System.out.println("Pressed 1");
-			
+//			System.out.println("Pressed 1");
+			if(num==6)
+				a.setIcon(new ImageIcon(new ImageIcon("images\\restinpeacetruesoldier.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+			else
+				a.setIcon(new ImageIcon(new ImageIcon("images\\"+num+".png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+
 		}
 		//b
 		else if (event.getX() < 735 && event.getY() < 585 && event.getX() > 475  && event.getY() > 225) // shows card window
 		{
-			System.out.println("Pressed 2");
+//			System.out.println("Pressed 2");
+			if(num==6)
+				b.setIcon(new ImageIcon(new ImageIcon("images\\restinpeacetruesoldier.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+			else
+				b.setIcon(new ImageIcon(new ImageIcon("images\\"+num+".png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+
 		}
 		//c
 		else if (event.getX() < 1100 && event.getY() < 585 && event.getX() > 850  && event.getY() > 225) // shows card window
 		{
-			System.out.println("Pressed 3");
+//			System.out.println("Pressed 3");
+			if(num==6)
+				c.setIcon(new ImageIcon(new ImageIcon("images\\restinpeacetruesoldier.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+			else
+				c.setIcon(new ImageIcon(new ImageIcon("images\\"+num+".png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+
 		}
 		//d
 		else if (event.getX() < 1485 && event.getY() < 585 && event.getX() > 1225  && event.getY() > 225) // shows card window
 		{
-			System.out.println("Pressed 4");
+//			System.out.println("Pressed 4");
+			if(num==6)
+				d.setIcon(new ImageIcon(new ImageIcon("images\\restinpeacetruesoldier.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+			else
+				d.setIcon(new ImageIcon(new ImageIcon("images\\"+num+".png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+
 		}
 	}	
 	public static void main(String[] args) throws IOException
