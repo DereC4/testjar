@@ -1,4 +1,4 @@
-package testjar;
+
 import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -61,7 +61,7 @@ public class testframe extends JFrame implements MouseListener
 	{
 	}
 	public void mouseReleased(MouseEvent event)
-	{
+	{ 
 		int num = (int) Math.floor(Math.random() * (18) + 1);
 		System.out.println(num);
 		//a
