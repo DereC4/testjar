@@ -1,58 +1,57 @@
-import java.awt.Font;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.io.IOException;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
-
-@SuppressWarnings("serial")
-public class testframe extends JFrame
+public class testframe extends JFrame implements MouseListener
 {
-	private JPanel welcome;
-	private JLabel to, summoners, rift;
+	public static final int LENGTH = 1600;
+	public static final int HEIGHT = 1000;
+	
 
-	public testframe()
+	public testframe() throws IOException
 	{
-		int ok;
-		String idk;
-		
-		super.setName("Hamp Grading Simulator");
-		super.setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		welcome = new JPanel();
-		welcome.setBorder(new EmptyBorder(9, 9, 9, 9));
-		setContentPane(welcome);
-		welcome.setLayout(null);
-		
-		to = new JLabel();
-		to.setFont(new Font("Arial", Font.PLAIN, 70));
-		to.setHorizontalAlignment(SwingConstants.CENTER);
-		to.setBounds(10, 11, 414, 103);
-		welcome.add(to);
-		
-//		summoners = new JLabel("Hamp Grading Simulator");
-//		summoners.setFont(new Font("Arial", Font.PLAIN, 35));
-//		summoners.setHorizontalAlignment(SwingConstants.CENTER);
-//		summoners.setBounds(10, 55, 414, 103);
-//		welcome.add(summoners);
-		
-//		rift = new JLabel("<html>To remove this annoying message in "
-//				+ "<br/>the middle of your simulator, <br/>all you have to do is pay up!<html>");
-//		rift.setFont(new Font("Arial", Font.PLAIN, 15));
-//		rift.setHorizontalAlignment(SwingConstants.CENTER);
-//		rift.setBounds(10, 100, 414, 103);
-//		welcome.add(rift);
-		 
-		ok = (int) Math.floor(Math.random() * (11) + 90);
-//		System.out.println(x);
-		idk = String.valueOf(ok);
-		to.setText(idk);
+		super("Seven Wonders");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setResizable(false);
+		setLayout(null);
+		setVisible(true);
+		setBounds(150, 25, LENGTH, HEIGHT);
+		addMouseListener(this);
 	}
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{
-					testframe frame = new testframe();
-					frame.setVisible(true);
+		testframe frame = new testframe();
+		frame.setVisible(true);
+	}
+	@Override
+	public void mouseClicked(MouseEvent arg0)
+	{
+		// TODO Auto-generated method stub
+
+	}
+	@Override
+	public void mouseEntered(MouseEvent arg0)
+	{
+		// TODO Auto-generated method stub
+
+	}
+	@Override
+	public void mouseExited(MouseEvent arg0)
+	{
+		// TODO Auto-generated method stub
+
+	}
+	@Override
+	public void mousePressed(MouseEvent arg0)
+	{
+		// TODO Auto-generated method stub
+
+	}
+	@Override
+	public void mouseReleased(MouseEvent arg0)
+	{
+		// TODO Auto-generated method stub
+
 	}
 }
