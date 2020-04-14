@@ -1,19 +1,18 @@
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 public class testframe extends JFrame implements MouseListener
 {
 	public static final int LENGTH = 1600;
 	public static final int HEIGHT = 1000;
-
+	JLabel a, b, c, d;
 	public testframe() throws IOException
 	{
 		super("Seven Wonders");
@@ -23,79 +22,68 @@ public class testframe extends JFrame implements MouseListener
 		setVisible(true);
 		setBounds(150, 25, LENGTH, HEIGHT);
 		addMouseListener(this);
+		super.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("images\\background.png")))));	
+		init();
 	}
-	public void paint(Graphics g)
+	public void init() throws IOException
 	{
-		try
-		{
-			BufferedImage background = ImageIO.read(new File("images\\background.png"));
-			g.drawImage(background, 0, 0, LENGTH, HEIGHT, null);
-			
-			BufferedImage a, b, c, d;
-			a = ImageIO.read(new File("images\\restinpeacetruesoldier.png"));
-			b = ImageIO.read(new File("images\\restinpeacetruesoldier.png"));
-			c = ImageIO.read(new File("images\\restinpeacetruesoldier.png"));
-			d = ImageIO.read(new File("images\\restinpeacetruesoldier.png"));
-			g.setColor(new Color(26, 109, 176));
-			int x = 100;
-			for (int i = 0; i < 4; i++)
-			{
-//				g.fillRect(x, 225, 260, 350);
-				if(i == 0)
-					g.drawImage(a, x, 225, 260, 350, null);
-				if(i == 1)
-					g.drawImage(b, x, 225, 260, 350, null);
-				if(i == 2)
-					g.drawImage(c, x, 225, 260, 350, null);
-				if(i == 3)
-					g.drawImage(d, x, 225, 260, 350, null);
-				x+=375;
-			}
-//			int ok = (int) Math.floor(Math.random() * (11) + 90);
-//			if(ok == 6)
-//				a = ImageIO.read(new File("images\\restinpeacetruesoldier.png"));
-//			else
-//				a = ImageIO.read(new File("images\\"+ok+".jpg"));
-//			b = ImageIO.read(new File("images\\assets\\victory1.png"));
-//			c = ImageIO.read(new File("images\\assets\\victoryminus1.png"));
-		}
-		catch (IOException e) 
-		{
-			e.printStackTrace();
-		}
+		a = new JLabel();
+		a.setIcon(new ImageIcon(new ImageIcon("images\\restinpeacetruesoldier.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+		super.add(a);
+		a.setBounds(100, 225, 260, 350);
+		
+		b = new JLabel();
+		b.setIcon(new ImageIcon(new ImageIcon("images\\1.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+		super.add(b);
+		b.setBounds(475, 225, 260, 350);
+		
+		c = new JLabel();
+		c.setIcon(new ImageIcon(new ImageIcon("images\\3.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+		super.add(c);
+		c.setBounds(850, 225, 260, 350);
+		
+		d = new JLabel();
+		d.setIcon(new ImageIcon(new ImageIcon("images\\5.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+		super.add(d);
+		d.setBounds(1225, 225, 260, 350);
 	}
-	@Override
 	public void mouseClicked(MouseEvent arg0)
 	{
-		// TODO Auto-generated method stub
-
 	}
-	@Override
 	public void mouseEntered(MouseEvent arg0)
 	{
-		// TODO Auto-generated method stub
-
-	}
-	@Override
+	}	
 	public void mouseExited(MouseEvent arg0)
 	{
-		// TODO Auto-generated method stub
-
 	}
-	@Override
 	public void mousePressed(MouseEvent arg0)
 	{
-		// TODO Auto-generated method stub
-
 	}
-	@Override
 	public void mouseReleased(MouseEvent event)
 	{
-		if (event.getX() < 1100 && event.getY() < 200 && event.getX() > 1000 && event.getY() > 100) // shows card window
+		int num = (int) Math.floor(Math.random() * (10) + 1);
+		System.out.println(num);
+		//a
+		if (event.getX() < 360 && event.getY() < 585 && event.getX() > 100  && event.getY() > 225) // shows card window
 		{
+			System.out.println("Pressed 1");
 			
 		}
-		repaint();
+		//b
+		else if (event.getX() < 735 && event.getY() < 585 && event.getX() > 475  && event.getY() > 225) // shows card window
+		{
+			System.out.println("Pressed 2");
+		}
+		//c
+		else if (event.getX() < 1100 && event.getY() < 585 && event.getX() > 850  && event.getY() > 225) // shows card window
+		{
+			System.out.println("Pressed 3");
+		}
+		//d
+		else if (event.getX() < 1485 && event.getY() < 585 && event.getX() > 1225  && event.getY() > 225) // shows card window
+		{
+			System.out.println("Pressed 4");
+		}
 	}	
 	public static void main(String[] args) throws IOException
 	{
