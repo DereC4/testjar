@@ -23,28 +23,49 @@ public class testframe extends JFrame implements MouseListener
 		setVisible(true);
 		setBounds(150, 25, LENGTH, HEIGHT);
 		addMouseListener(this);
-		super.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("images\\background.png")))));	
+		super.setContentPane(new JLabel(new ImageIcon(ImageIO.read(testframe.class.getResource("background.png")))));	
 		init();
 	}
 	public void init() throws IOException
 	{
+		int num = (int) Math.floor(Math.random() * (18) + 1);
+//		System.out.println(num);
+		
 		a = new JLabel();
-		a.setIcon(new ImageIcon(new ImageIcon("images\\restinpeacetruesoldier.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+		if(num==6)
+			a.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource("ripsoldier.png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+		else
+			a.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource(num+".png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
 		super.add(a);
 		a.setBounds(100, 225, 260, 350);
 		
+		num = (int) Math.floor(Math.random() * (18) + 1);
+		
 		b = new JLabel();
-		b.setIcon(new ImageIcon(new ImageIcon("images\\1.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+		if(num==6)
+			b.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource("ripsoldier.png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+		else
+			b.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource(num+".png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
 		super.add(b);
 		b.setBounds(475, 225, 260, 350);
 		
+		num = (int) Math.floor(Math.random() * (18) + 1);
+		
 		c = new JLabel();
-		c.setIcon(new ImageIcon(new ImageIcon("images\\3.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+		if(num==6)
+			c.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource("ripsoldier.png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+		else
+			c.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource(num+".png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
 		super.add(c);
 		c.setBounds(850, 225, 260, 350);
 		
+		num = (int) Math.floor(Math.random() * (18) + 1);
+		
 		d = new JLabel();
-		d.setIcon(new ImageIcon(new ImageIcon("images\\5.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+		if(num==6)
+			d.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource("ripsoldier.png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+		else
+			d.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource(num+".png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
 		super.add(d);
 		d.setBounds(1225, 225, 260, 350);
 	}
@@ -62,47 +83,50 @@ public class testframe extends JFrame implements MouseListener
 	}
 	public void mouseReleased(MouseEvent event)
 	{ 
-		int num = (int) Math.floor(Math.random() * (18) + 1);
-		System.out.println(num);
-		//a
-		if (event.getX() < 360 && event.getY() < 585 && event.getX() > 100  && event.getY() > 225) // shows card window
+		try
 		{
-//			System.out.println("Pressed 1");
-			if(num==6)
-				a.setIcon(new ImageIcon(new ImageIcon("images\\restinpeacetruesoldier.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
-			else
-				a.setIcon(new ImageIcon(new ImageIcon("images\\"+num+".png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
-
+			int num = (int) Math.floor(Math.random() * (18) + 1);
+			System.out.println(num);
+			//a
+			if (event.getX() < 360 && event.getY() < 585 && event.getX() > 100  && event.getY() > 225) // shows card window
+			{
+	//			System.out.println("Pressed 1");
+				if(num==6)
+					a.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource("ripsoldier.png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+				else
+					a.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource(num+".png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+			}
+			//b
+			else if (event.getX() < 735 && event.getY() < 585 && event.getX() > 475  && event.getY() > 225) // shows card window
+			{
+	//			System.out.println("Pressed 2");
+				if(num==6)
+					b.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource("ripsoldier.png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+				else
+					b.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource(num+".png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+			}
+			//c
+			else if (event.getX() < 1100 && event.getY() < 585 && event.getX() > 850  && event.getY() > 225) // shows card window
+			{
+	//			System.out.println("Pressed 3");
+				if(num==6)
+					c.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource("ripsoldier.png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+				else
+					c.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource(num+".png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+			}
+			//d
+			else if (event.getX() < 1485 && event.getY() < 585 && event.getX() > 1225  && event.getY() > 225) // shows card window
+			{
+	//			System.out.println("Pressed 4");
+				if(num==6)
+					d.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource("ripsoldier.png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+				else
+					d.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(testframe.class.getResource(num+".png"))).getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
+			}
 		}
-		//b
-		else if (event.getX() < 735 && event.getY() < 585 && event.getX() > 475  && event.getY() > 225) // shows card window
+		catch (Exception x)
 		{
-//			System.out.println("Pressed 2");
-			if(num==6)
-				b.setIcon(new ImageIcon(new ImageIcon("images\\restinpeacetruesoldier.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
-			else
-				b.setIcon(new ImageIcon(new ImageIcon("images\\"+num+".png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
-
-		}
-		//c
-		else if (event.getX() < 1100 && event.getY() < 585 && event.getX() > 850  && event.getY() > 225) // shows card window
-		{
-//			System.out.println("Pressed 3");
-			if(num==6)
-				c.setIcon(new ImageIcon(new ImageIcon("images\\restinpeacetruesoldier.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
-			else
-				c.setIcon(new ImageIcon(new ImageIcon("images\\"+num+".png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
-
-		}
-		//d
-		else if (event.getX() < 1485 && event.getY() < 585 && event.getX() > 1225  && event.getY() > 225) // shows card window
-		{
-//			System.out.println("Pressed 4");
-			if(num==6)
-				d.setIcon(new ImageIcon(new ImageIcon("images\\restinpeacetruesoldier.png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
-			else
-				d.setIcon(new ImageIcon(new ImageIcon("images\\"+num+".png").getImage().getScaledInstance(260, 350, Image.SCALE_DEFAULT)));
-
+			System.out.println(x);
 		}
 	}	
 	public static void main(String[] args) throws IOException
