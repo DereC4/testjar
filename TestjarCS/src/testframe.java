@@ -85,7 +85,7 @@ public class testframe extends JFrame implements MouseListener
 		try
 		{
 			int num = (int) Math.floor(Math.random() * (18) + 1);
-			System.out.println(num);
+//			System.out.println(num);
 			//a
 			if (event.getX() < 360 && event.getY() < 585 && event.getX() > 100  && event.getY() > 225) // shows card window
 			{
@@ -125,7 +125,7 @@ public class testframe extends JFrame implements MouseListener
 		}
 		catch (Exception x)
 		{
-			System.out.println(x);
+//			System.out.println(x);
 		}
 	}	
 	public static void main(String[] args) throws IOException
