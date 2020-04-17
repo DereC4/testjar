@@ -15,7 +15,7 @@ public class testframe extends JFrame implements MouseListener
 	JLabel a, b, c, d;
 	public testframe() throws IOException
 	{
-		super("Test Jar Derek");
+		super("Team Derek Jar");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setResizable(false);
 		setLayout(null);
