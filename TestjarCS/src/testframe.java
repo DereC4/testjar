@@ -130,7 +130,7 @@ public class testframe extends JFrame implements MouseListener
 		}
 	}	
 	public static void main(String[] args) throws IOException
-	{
+	{ 
 		testframe frame = new testframe();
 		frame.setVisible(true);
 	}
